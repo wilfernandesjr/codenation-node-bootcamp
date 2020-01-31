@@ -1,6 +1,6 @@
 const fs = require('fs')
 
-const file = fs.readFileSync('./data.csv').toString()
+const file = fs.readFileSync(__dirname + '/data.csv').toString()
 
 const parsedFile = file
     .split('\n')
