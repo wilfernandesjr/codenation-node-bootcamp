@@ -24,5 +24,6 @@ describe('', () => {
       .get('/female-inactive')
 
     expect(res.statusCode).toBe(200)
+    expect(res.body).toEqual(expected)
   })
 })

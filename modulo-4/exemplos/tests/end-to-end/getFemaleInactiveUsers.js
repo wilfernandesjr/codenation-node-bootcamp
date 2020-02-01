@@ -1,11 +1,12 @@
 const fs = require('fs')
 const path = require('path')
+const { toHTML } = require('./template')
 
 const getFemaleInactiveUsers = (request, response) => {
     const twoMonthsPeriod = 5270400000
     const currentDate = new Date().getTime()
     const directory = path.resolve(__dirname, './users.json')
-    const users = fs.readFileSync(directory)
+    const users = fs.readFileSync(directory, 'utf-8')
     const parsedUsers = typeof users === 'string' ? JSON.parse(users) : users
 
     const inactiveUsers = parsedUsers
@@ -16,7 +17,7 @@ const getFemaleInactiveUsers = (request, response) => {
           return isInactive && isFemale
         })
 
-    response.json(inactiveUsers)
+    response.send(toHTML(inactiveUsers))
 }
 
 module.exports = getFemaleInactiveUsers

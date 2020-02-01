@@ -20,13 +20,14 @@
     "jest": "^24.9.0"
   },
   "dependencies": {
+    "body-parser": "^1.19.0",
     "convert-csv-to-json": "0.0.15",
     "csvjson": "^5.1.0",
+    "cypress": "^3.8.3",
     "express": "^4.17.1",
     "mock-require": "^3.0.3",
+    "path": "^0.12.7",
     "request": "^2.88.0",
-    "supertest": "^4.0.2",
-    "body-parser": "^1.19.0",
-    "path": "^0.12.7"
+    "supertest": "^4.0.2"
   }
 }

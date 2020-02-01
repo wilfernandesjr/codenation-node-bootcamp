@@ -1,6 +1,8 @@
+const path = require('path')
+
 const MOCK_FILE_INFO = {}
 
-MOCK_FILE_INFO[`${process.cwd()}/tests/mock/users.json`] = [
+MOCK_FILE_INFO[path.resolve(__dirname, '../users.json')] = [
   {
     'id': 1,
     'name': 'Cyb',
