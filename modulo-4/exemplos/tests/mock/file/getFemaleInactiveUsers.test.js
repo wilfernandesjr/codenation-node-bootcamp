@@ -1,5 +1,3 @@
-const getFemaleInactiveUsers = require('./getFemaleInactiveUsers')
-
 jest.mock('../users.json', () => ([
   {
     'id': 1,
@@ -21,6 +19,9 @@ jest.mock('../users.json', () => ([
     'gender': 'Male'
   },
 ]))
+
+const getFemaleInactiveUsers = require('./getFemaleInactiveUsers')
+
 
 test('Should return only female inactive users', () => {
   const expected = [
