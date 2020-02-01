@@ -25,7 +25,6 @@
     "csvjson": "^5.1.0",
     "cypress": "^3.8.3",
     "express": "^4.17.1",
-    "mock-require": "^3.0.3",
     "path": "^0.12.7",
     "request": "^2.88.0",
     "supertest": "^4.0.2"
