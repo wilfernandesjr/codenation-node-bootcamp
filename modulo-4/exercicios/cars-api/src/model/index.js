@@ -51,9 +51,9 @@ const cars = {
     }
 
     db[id] = Object.assign(
-      { updated_at: new Date() },
       { ...db[id] },
-      data
+      data,
+      { updated_at: new Date() }
     )
 
     return resolve(db[id])
@@ -75,4 +75,4 @@ const cars = {
 }
 
 
-module.exports = { cars }
+module.exports = { cars, updateDB }
