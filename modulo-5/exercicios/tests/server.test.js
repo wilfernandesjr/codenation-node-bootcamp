@@ -3,22 +3,75 @@
 const request = require('supertest')
 const server = require('../src/server')
 
-beforeAll(() => {})
-afterAll(() => {})
-beforeEach(() => {})
-afterEach(() => {})
+const {
+  connection,
+  insertOnTable,
+  cleanTable
+} = require('./utils')
 
-describe('The API on /v1/cars Endpoint at GET method should...', () => {
+afterAll(() => connection.end())
+
+describe.only('The API on /v1/cars Endpoint at GET method should...', () => {
+  beforeAll(async () => {
+    await insertOnTable(`null, 'Peugeot 207', 'Carrinho Massa', 'Peugeot', 19950.30, 2011, 'Black', 'Not found'`)
+    await insertOnTable(`null, 'Argo', 'Carrinho TOP', 'Fiat', 45430.30, 2019, 'White', 'Not found'`)
+  })
+
+  afterAll(async () => await cleanTable())
+
   test(`return 200 as status code and have 'total' and 'data' as properties`, async () => {
-    // ...
+    expect.assertions(2)
+
+    const res = await request(server.app).get('/v1/cars')
+
+    expect(res.statusCode).toEqual(200)
+    expect(Object.keys(res.body)).toMatchObject([
+      'total',
+      'data'
+    ])
   })
 
   test('return the right number of items and an object with all items', async () => {
-    // ...
+    expect.assertions(2)
+
+    const res = await request(server.app).get('/v1/cars')
+
+    expect(res.body.total).toEqual(2)
+    expect(typeof res.body.data).toBe('object')
   })
 
   test(`return the 'data' property with all items from DB`, async () => {
-    // ...
+    expect.assertions(1)
+
+    const res = await request(server.app).get('/v1/cars')
+
+    console.log(JSON.stringify(res.body))
+
+    expect(res.body).toMatchObject({
+      "total": 2,
+      "data": [
+        {
+          "id": 1,
+          "car_model": "Peugeot 207",
+          "description": "Carrinho Massa",
+          "company": "Peugeot",
+          "price": 19950.3,
+          "year": 2011,
+          "color": "Black",
+          "image_url": "Not found"
+        },
+        {
+          "id": 2,
+          "car_model": "Argo",
+          "description": "Carrinho TOP",
+          "company": "Fiat",
+          "price": 45430.3,
+          "year": 2019,
+          "color": "White",
+          "image_url": "Not found"
+        }
+      ]
+    })
   })
 })
 

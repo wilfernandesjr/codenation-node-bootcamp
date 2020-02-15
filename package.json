@@ -24,10 +24,12 @@
     "convert-csv-to-json": "0.0.15",
     "csvjson": "^5.1.0",
     "cypress": "^3.8.3",
-    "mysql": "^2.18.1",
     "express": "^4.17.1",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.1.0",
     "path": "^0.12.7",
     "request": "^2.88.0",
+    "sequelize": "^5.21.4",
     "supertest": "^4.0.2"
   }
 }

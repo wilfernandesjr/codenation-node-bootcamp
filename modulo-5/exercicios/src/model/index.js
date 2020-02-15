@@ -1,15 +1,37 @@
-const env = process.env.NODE_ENV || 'development'
+const {
+  query,
+  setValuesToInsert,
+  setValuesToUpdate
+} = require('../db')
 
 const cars = {
-  findAll: () => {},
+  findAll: async () => {
+    const result = await query(`SELECT * FROM cars`)
+    return result
+  },
 
-  findById: id => {},
+  findById: async id => {
+    const result = await query(`SELECT * FROM cars WHERE id = ${id}`)
+      .then(res => (res.length ? res[0] : {}))
 
-  create: data => {},
+    return result
+  },
 
-  update: (data, id) => {},
+  create: async data => {
+    const values = setValuesToInsert(data)
+    const result = await query(`INSERT INTO cars VALUES (${values})`)
 
-  delete: id => {}
+    return result
+  },
+
+  update: async (data, id) => {
+    const values = setValuesToUpdate(data)
+    const result = await query(`UPDATE cars SET ${values} WHERE id = ${id}`)
+
+    return result
+  },
+
+  delete: async id => await query(`DELETE FROM cars WHERE id = ${id}`)
 }
 
 

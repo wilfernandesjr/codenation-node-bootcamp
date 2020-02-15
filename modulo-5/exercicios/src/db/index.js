@@ -15,6 +15,24 @@ const query = query => {
   })
 }
 
+const setValuesToInsert = obj =>
+  Object.values(obj)
+    .reduce((acc, cur) => (
+      `${acc}, ${typeof cur !== 'string' ? cur : `'${cur}'`}`
+    ), 'null')
+
+const setValuesToUpdate = obj => {
+  const result = Object.keys(obj)
+    .reduce((acc, cur) => (
+      `${acc}${cur} = ${typeof obj[cur] !== 'string' ? obj[cur] : `'${obj[cur]}'`}, `
+    ), '')
+
+  return result.substring(0, result.length - 2)
+}
+
 module.exports = {
-  query
+  query,
+  setValuesToInsert,
+  setValuesToUpdate,
+  connection
 }

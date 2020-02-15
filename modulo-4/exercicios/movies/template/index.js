@@ -65,8 +65,8 @@ const renderMovie = ({
           <p>${description}</p>
         </article>
         <footer>
-          <a href="${parseInt(rank) - 1}">← Anterior</a>
-          <a href="${parseInt(rank) + 1}">→ Próximo</a>
+          <a data-cy="anterior" href="/movies/${parseInt(rank) - 1}">← Anterior</a>
+          <a data-cy="posterior" href="/movies/${parseInt(rank) + 1}">→ Próximo</a>
         </footer>
       </main>
     </body>
