@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Codenation CRUD - Alunos</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+  <header class="container navbar">
+    <h1 class="navbar-brand">Code<strong> {NATION}</strong></h1>
+    <nav class="nav">
+      <a class="nav-link" href='/alunos.html'>Gestão de Alunos</a>
+      <a class="nav-link" href='/instrutores.html'>Gestão de Instrutores</a>
+      <a class="nav-link" href='/turmas.html'>Gestão de Turmas</a>
+    </nav>
+  </header>
+  <br><br>
+  <section class="container">
+    <h4>Lista de alunos:</h4>
+    <table class="table">
+      <thead>
+        <td>#</td>
+        <td>Avatar</td>
+        <td>Nome</td>
+        <td>Usuário</td>
+        <td>Email</td>
+        <td>Linkedin</td>
+        <td>Github</td>
+        <td>Level</td>
+        <td>Ação</td>
+      </thead>
+      <tbody data-students></tbody>
+    </table>
+  </section>
+  <br><br>
+  <section class="container card card-body">
+    <h4>Cadastrar novo aluno:</h4>
+    <form data-create-form class="card-body">
+      <div class="form-group">
+        <input type="text" class="form-control" data-create-form-name placeholder="Digite seu nome">
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" data-create-form-username placeholder="Digite seu username">
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" data-create-form-email placeholder="Digite seu email">
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" data-create-form-linkedin placeholder="Digite seu linkedin">
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" data-create-form-github placeholder="Digite seu github">
+      </div>
+      <div class="form-group">
+        <select class="form-control" data-create-form-level>
+          <option>Escolha o seu nível</option>
+          <option value='Júnior'>Júnior</option>
+          <option value='Pleno'>Pleno</option>
+          <option value='Sênior'>Sênior</option>
+          <option value='Especialista'>Especialista</option>
+        </select>
+      </div>
+      <button class="btn btn-primary" type="submit">CRIAR NOVO ALUNO</button>
+    </form>
+  </section>
+
+  <script src="/js/alunos.js"></script>
+</body>
+</html>

@@ -4,7 +4,7 @@ CREATE TABLE `cars` (
   `description` varchar(50) NOT NULL,
   `color` varchar(50) NOT NULL,
   `id_brand` int(10) NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
   FOREIGN KEY (`id_brand`) REFERENCES brands(id)
 );
 

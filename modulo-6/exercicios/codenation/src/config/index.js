@@ -5,7 +5,7 @@ module.exports = {
     host     : 'localhost',
     user     : 'root',
     password : '1234',
-    database : `students_${NODE_ENV}`,
+    database : `codenation_${NODE_ENV}`,
   },
   env: NODE_ENV
 }

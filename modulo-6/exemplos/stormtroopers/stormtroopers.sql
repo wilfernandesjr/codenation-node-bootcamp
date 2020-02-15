@@ -14,5 +14,5 @@ INSERT INTO stormtroopers VALUES (null, 'Julinho Foguete', 'Zé Milícia', 2);
 INSERT INTO stormtroopers VALUES (null, 'José Quintão', 'Caveira', 2);
 
 -- Sem divisão
-INSERT INTO stormtroopers VALUES (null, 'Márcio Quincas', 'Marcinho', 1)
+INSERT INTO stormtroopers VALUES (null, 'Márcio Quincas', 'Marcinho', 1);
 INSERT INTO stormtroopers VALUES (null, 'José Loureiro', 'Lourinho', 1);
