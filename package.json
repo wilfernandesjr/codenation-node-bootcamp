@@ -22,6 +22,7 @@
   "dependencies": {
     "body-parser": "^1.19.0",
     "convert-csv-to-json": "0.0.15",
+    "cookie-parser": "^1.4.4",
     "csvjson": "^5.1.0",
     "cypress": "^3.8.3",
     "express": "^4.17.1",
