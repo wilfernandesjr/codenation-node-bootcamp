@@ -18,7 +18,7 @@
     "express": "4.15.3",
     "mongoose": "4.11.5",
     "swagger-ui-express": "2.0.6",
-    "method-override": "2.3.9"
+    "method-override": "2.3.10"
   },
   "engines": {
     "node": ">=6.11.0"
