@@ -1,0 +1,26 @@
+# Example of travis setup for a serverless api, with deploy through serverless framework
+language: node_js
+node_js:
+- '8.10'
+
+env:
+  global:
+    # AWS_ACCESS_KEY_ID
+    - secure: "ACCESS KEY ID DA AWS ENCRIPTADA"
+    # AWS_SECRET_ACCESS_KEY
+    - secure: "SECRET ACCESS KEY DA AWS ENCRIPTADA"
+
+install:
+- npm install -g serverless
+- yarn install
+
+script:
+- yarn test
+- yarn run coverage
+
+deploy:
+- provider: script
+  skip_cleanup: true
+  script: serverless deploy --stage production
+  on:
+    branch: master

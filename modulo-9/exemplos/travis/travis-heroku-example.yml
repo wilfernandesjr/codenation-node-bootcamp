@@ -1,0 +1,25 @@
+# Example of travis setup for a node app, with deploy through heroku
+language: node_js
+node_js:
+- '8.10'
+
+env:
+  global:
+    # AWS_ACCESS_KEY_ID
+    - secure: "ACCESS KEY ID DA AWS ENCRIPTADA"
+    # AWS_SECRET_ACCESS_KEY
+    - secure: "SECRET ACCESS KEY DA AWS ENCRIPTADA"
+
+install:
+- yarn install
+
+script:
+- yarn test
+- yarn run coverage
+
+deploy:
+  provider: heroku
+  api_key:
+    secure: KEY
+  on:
+    branch: master
