@@ -8,7 +8,7 @@
   },
   "devDependencies": {
     "jest": "^23.6.0",
-    "serverless-offline": "^3.20.3"
+    "serverless-offline": "^12.0.3"
   },
   "author": "",
   "license": "ISC"
