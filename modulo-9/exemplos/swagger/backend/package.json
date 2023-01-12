@@ -14,11 +14,11 @@
     "eslint-plugin-node": "5.1.1"
   },
   "dependencies": {
-    "body-parser": "1.17.2",
-    "express": "4.15.3",
-    "mongoose": "4.11.5",
+    "body-parser": "1.20.1",
+    "express": "4.18.2",
+    "mongoose": "4.13.21",
     "swagger-ui-express": "2.0.6",
-    "method-override": "2.3.9"
+    "method-override": "2.3.10"
   },
   "engines": {
     "node": ">=6.11.0"
